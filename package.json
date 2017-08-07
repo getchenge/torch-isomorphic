@@ -2,7 +2,7 @@
   "name": "torch-isomorphic",
   "version": "1.0.0",
   "description": "An isomorphic starter kit",
-  "main": "index.js",
+  "main": "server/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/kukukukikii/torch-isomorphic/issues"
   },
-  "homepage": "https://github.com/kukukukikii/torch-isomorphic#readme"
+  "homepage": "https://github.com/kukukukikii/torch-isomorphic#readme",
+  "dependencies": {
+    "dustjs-linkedin": "^2.7.5",
+    "koa": "^2.3.0",
+    "koa-router": "^7.2.1",
+    "koa-views": "^6.0.2"
+  }
 }

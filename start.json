@@ -1,0 +1,16 @@
+{
+  "apps": [
+    {
+      "name": "torch",
+      "script": "servers/index.js",
+      "instances": 1,
+      "merge_logs": true,
+      "watch": false,
+      "out_file": "/dev/null",
+      "env": {
+        "NODE_ENV": "development"
+      },
+      "max_memory_restart": "300M"
+    }
+  ]
+}
