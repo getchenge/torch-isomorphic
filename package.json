@@ -4,7 +4,9 @@
   "description": "An isomorphic starter kit",
   "main": "server/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev":"webpack --config webpack.config.js --watch",
+    "start":"pm2 start start.json"
   },
   "repository": {
     "type": "git",
@@ -19,7 +21,23 @@
   "dependencies": {
     "dustjs-linkedin": "^2.7.5",
     "koa": "^2.3.0",
+    "koa-logger": "^3.0.1",
     "koa-router": "^7.2.1",
+    "koa-static": "^4.0.1",
     "koa-views": "^6.0.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.4",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-redux": "^5.0.6",
+    "react-router-dom": "^4.1.2",
+    "redux": "^3.7.2",
+    "style-loader": "^0.18.2",
+    "webpack": "^3.5.4"
   }
 }
