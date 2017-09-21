@@ -13,7 +13,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.css$/,
+        test: /\.s?css$/,
         use: [
           {
             loader: 'style-loader'
@@ -23,8 +23,23 @@ module.exports = {
             options: {
               modules: true,
             }
+          }, {
+            loader: "sass-loader" // compiles Sass to CSS
           }]
       },
+      // {
+      //   test: /\.scss$/,
+      //   use: [{
+      //     loader: "style-loader" // creates style nodes from JS strings
+      //   }, {
+      //     loader: "css-loader", // translates CSS into CommonJS
+      //     options: {
+      //       modules: true,
+      //     }
+      //   }, {
+      //     loader: "sass-loader" // compiles Sass to CSS
+      //   }]
+      // },
       {
         test: /\.jsx?$/,
         loader: 'babel-loader',

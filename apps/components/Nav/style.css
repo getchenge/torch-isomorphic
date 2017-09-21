@@ -1,0 +1,8 @@
+.nav{
+  list-style-type: none;
+  
+}
+.item{
+  float: left;
+  margin-right: 1em;
+}

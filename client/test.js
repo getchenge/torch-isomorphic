@@ -1,3 +1,4 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-ReactDOM.render(<div>demo</div>, document.querySelector('#app'));
+import Nav from '../apps/components/Nav';
+ReactDOM.render(<div><Nav/></div>, document.querySelector('#app'));

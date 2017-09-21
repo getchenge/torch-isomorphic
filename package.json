@@ -5,8 +5,9 @@
   "main": "server/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev":"webpack --config webpack.config.js --watch",
-    "start":"pm2 start start.json"
+    "dev": "webpack --config webpack.config.js --watch",
+    "start": "pm2 start start.json",
+    "init": "npm install --production --unsafe-perm"
   },
   "repository": {
     "type": "git",
@@ -32,11 +33,14 @@
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.4",
+    "node-sass": "^4.5.3",
+    "postcss-loader": "^2.0.6",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.1.2",
     "redux": "^3.7.2",
+    "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
     "webpack": "^3.5.4"
   }
