@@ -5,7 +5,7 @@
       "script": "server/index.js",
       "instances": 1,
       "merge_logs": true,
-      // "watch": true,
+      "watch": true,
       "out_file": "/dev/null",
       "env": {
         "NODE_ENV": "development"

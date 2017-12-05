@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./src/dashboard/routes/NoMatch/index.js"],"names":[],"mappings":";;;;;;;;;;;;AAAA;;;;;;kBACe,YAAM;AACnB,SAAQ;AAAA;AAAA;AAAA;AAAA,GAAR;AACD,C","file":"7.js","sourcesContent":["import React from 'react';\nexport default () => {\n  return (<div>404</div>);\n}\n\n\n// WEBPACK FOOTER //\n// ./src/dashboard/routes/NoMatch/index.js"],"sourceRoot":""}

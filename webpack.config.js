@@ -1,42 +1,82 @@
 const webpack = require('webpack');
 const path = require('path');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const modStyle = new ExtractTextPlugin('style.css');
+const vendorStyle = new ExtractTextPlugin('vendor.css');
 
 module.exports = {
   entry: {
-    test: './client/test.js'
+    site: './src/site/index.js',
+    dashboard: './src/dashboard/index.js'
   },
   output: {
     path: path.resolve('./', 'public/dist/'),
-    publicPath: '/assets/',
+    publicPath: '/dist/',
     filename: '[name].js'
   },
   module: {
     rules: [
       {
-        test: /\.s?css$/,
+        test: /\.(png|jpg|gif)$/,
         use: [
           {
-            loader: 'style-loader'
-          },
-          {
-            loader: 'css-loader',
+            loader: 'file-loader'
+          }
+        ]
+      },
+      {
+        test: /\.css$/,
+        include: /node_modules/,
+        use: vendorStyle.extract({
+          fallback: 'style-loader',
+          use: 'css-loader'
+        })
+      },
+      {
+        test: /\.s?css$/,
+        include: [path.join(__dirname, '/apps/'), path.join(__dirname, '/src/')],
+        use: modStyle.extract({
+          fallback: 'style-loader',
+          use: [{ loader: 'css-loader', options: { modules: true } }, 'sass-loader', {
+            loader: 'postcss-loader',
             options: {
-              modules: true,
+              ident: 'postcss',
+              plugins: (loader) => [
+                require('autoprefixer')()
+              ]
             }
-          }, {
-            loader: "sass-loader" // compiles Sass to CSS
           }]
+        })
       },
       {
         test: /\.jsx?$/,
-        loader: 'babel-loader',
         exclude: /node_modules/,
-        options: {
-          presets: ['env', 'react']
-        }
+        use: [
+          {
+            loader: 'babel-loader',
+            query: {
+              presets: ['env', 'react'],
+              plugins: [
+                'transform-runtime',
+                'transform-object-rest-spread',
+                'add-module-exports',
+                'syntax-dynamic-import',
+                'transform-class-properties',
+                ['import', {
+                  libraryName: 'antd',
+                  style: 'css'
+                }]
+              ]
+            }
+          }
+        ]
       }
     ]
   },
+  plugins: [
+    modStyle,
+    vendorStyle
+  ],
   resolve: {
     modules: [path.resolve('./'), 'node_modules'],
     extensions: ['.js', '.jsx']

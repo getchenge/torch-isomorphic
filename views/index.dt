@@ -5,12 +5,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <link rel="shortcut icon" href="/favicon.ico">
   <link rel="stylesheet" href="/style/css/index.css" />
+  <link rel="stylesheet" href="/dist/vendor.css" />
+  <link rel="stylesheet" href="/dist/style.css" />
   {+css /}
   <title>{+title}Torch{/title}</title>
 </head>
 <body class="index">
-  <div id="app"></div>
-<script src="/dist/test.js"></script>
+  <div id="root"></div>
+<script src="/dist/site.js"></script>
   {+js /}
 </body>
 </html>
